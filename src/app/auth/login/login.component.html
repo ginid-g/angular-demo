@@ -1,0 +1,40 @@
+<!-- your-component.component.html -->
+
+<div class="max-w-md mx-auto mt-8">
+  <h2 class="text-xl font-bold mb-2">User Information</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- Username Input -->
+    <div class="mb-4">
+      <label for="username" class="block mb-2">Username:</label>
+      <input
+        type="text"
+        id="username"
+        formControlName="username"
+        class="w-full p-2 border border-gray-300 rounded-md"
+      />
+      <div
+        *ngIf="
+          userForm.get('username')?.hasError('required') &&
+          userForm.get('username')?.touched
+        "
+        class="text-red-500 mt-1"
+      >
+        Username is required.
+      </div>
+      <div
+        *ngIf="
+          userForm.get('username')?.hasError('minlength') &&
+          userForm.get('username')?.touched
+        "
+        class="text-red-500 mt-1"
+      >
+        Username must be at least 3 characters.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">
+      Submit
+    </button>
+  </form>
+</div>

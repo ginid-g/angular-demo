@@ -1,0 +1,41 @@
+<div *ngIf="sunriseData" class="mt-4">
+  <h2 class="text-xl font-bold mb-2">Sunrise/Sunset Information</h2>
+  <p>
+    <strong>Sunrise:</strong>
+    {{ sunriseData.sunrise | date : "medium" }}
+  </p>
+  <p><strong>Sunset:</strong> {{ sunriseData.sunset | date : "medium" }}</p>
+  <p>
+    <strong>Solar Noon:</strong>
+    {{ sunriseData.solar_noon | date : "medium" }}
+  </p>
+  <p>
+    <strong>Day Length:</strong>
+    {{ sunriseData.day_length }}
+  </p>
+  <p>
+    <strong>Civil Twilight Begin:</strong>
+    {{ sunriseData.civil_twilight_begin | date : "medium" }}
+  </p>
+  <p>
+    <strong>Civil Twilight End:</strong>
+    {{ sunriseData.civil_twilight_end | date : "medium" }}
+  </p>
+  <p>
+    <strong>Nautical Twilight Begin:</strong>
+    {{ sunriseData.nautical_twilight_begin | date : "medium" }}
+  </p>
+  <p>
+    <strong>Nautical Twilight End:</strong>
+    {{ sunriseData.nautical_twilight_end | date : "medium" }}
+  </p>
+  <p>
+    <strong>Astronomical Twilight Begin:</strong>
+    {{ sunriseData.astronomical_twilight_begin | date : "medium" }}
+  </p>
+  <p>
+    <strong>Astronomical Twilight End:</strong>
+    {{ sunriseData.astronomical_twilight_end | date : "medium" }}
+  </p>
+  <!-- Add other fields as needed -->
+</div>
